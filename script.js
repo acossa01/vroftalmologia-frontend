@@ -22,37 +22,38 @@ function initNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Toggle menu mobile
-    if (navToggle) {
+    // Toggle menu mobile (A LÓGICA DO CLIQUE ESTÁ AQUI)
+    if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active'); // Mostra/esconde o menu
+            navToggle.classList.toggle('active'); // Anima o ícone do hambúrguer para um "X"
         });
     }
 
-    // Smooth scrolling nos links
+    // Smooth scrolling e fechar o menu ao clicar em um link
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
 
-            // Fechar menu mobile após click
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
+            // Verifica se é um link interno (#) ou externo (login.html)
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Fecha o menu mobile após o clique em um link interno
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
             }
         });
     });
 
-    // Highlighting do menu ativo
+    // Highlighting do menu ativo e header com scroll
     window.addEventListener('scroll', updateActiveNavLink);
 }
 
@@ -728,3 +729,111 @@ function showCadastroModal() {
         closeModal();
     });
 } 
+
+/* =================================================================== */
+/* FUNCIONALIDADE DE MODAL E PRÉVIA DAS SALAS VR                  */
+/* =================================================================== */
+
+// Função genérica para criar um modal (janela de sobreposição)
+function createModal(content) {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal-overlay';
+    
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+    modalContent.innerHTML = content;
+    
+    modalOverlay.appendChild(modalContent);
+    
+    // Fechar o modal ao clicar fora dele
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+    
+    return modalOverlay;
+}
+
+// Função para fechar qualquer modal ativo
+function closeModal() {
+    const activeModal = document.querySelector('.modal-overlay.active');
+    if (activeModal) {
+        activeModal.classList.remove('active');
+        // Esperar a transição de fade-out terminar para remover o elemento
+        setTimeout(() => {
+            activeModal.remove();
+        }, 300);
+    }
+}
+
+/* =================================================================== */
+/* FUNCIONALIDADE DE MODAL E PRÉVIA DAS SALAS VR (VERSÃO CORRETA) */
+/* =================================================================== */
+
+// Função genérica para criar o overlay e o contêiner do modal
+function createModal(content) {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal-overlay';
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+    modalContent.innerHTML = content;
+
+    modalOverlay.appendChild(modalContent);
+
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    return modalOverlay;
+}
+
+// Função para fechar qualquer modal ativo
+function closeModal() {
+    const activeModal = document.querySelector('.modal-overlay.active');
+    if (activeModal) {
+        activeModal.classList.remove('active');
+        setTimeout(() => {
+            if(activeModal) activeModal.remove();
+        }, 300);
+    }
+}
+
+// Função para mostrar a prévia da sala VR com o novo design
+function showRoomPreview(roomCard) {
+    const roomName = roomCard.querySelector('h3').textContent;
+    const roomType = roomCard.querySelector('.room-access').textContent;
+    const featuresList = roomCard.querySelector('.room-features ul');
+    const featuresHTML = featuresList ? featuresList.innerHTML : '<li>Recursos não disponíveis.</li>';
+
+    const modalHTML = `
+        <div class="room-preview-grid">
+            <div class="preview-media">
+                <div class="play-button"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="preview-details">
+                <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+                <h3 class="gradient-text">${roomName}</h3>
+                <p class="access-info">${roomType}</p>
+                <h4>Funcionalidades Incluídas:</h4>
+                <ul class="preview-feature-list">
+                    ${featuresHTML.replace(/<li>/g, '<li><i class="fas fa-check-circle"></i> ')}
+                </ul>
+                <div class="preview-actions">
+                    <button class="btn btn-primary" onclick="closeModal()">
+                        <i class="fas fa-vr-cardboard"></i>
+                        Entrar na Sala
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeModal()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const modal = createModal(modalHTML);
+    document.body.appendChild(modal);
+    setTimeout(() => modal.classList.add('active'), 10);
+}

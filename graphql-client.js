@@ -4,7 +4,7 @@
 // ============================================================================
 
 class GraphQLClient {
-    constructor(endpoint = window.BACKEND_GRAPHQL_ENDPOINT || 'http://localhost:3000/graphql') {
+    constructor(endpoint = window.BACKEND_GRAPHQL_ENDPOINT = 'https://rv-backend-api.onrender.com/graphql') {
         this.endpoint = endpoint;
         this.token = localStorage.getItem('access_token');
     }
