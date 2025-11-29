@@ -79,7 +79,7 @@ function updateActiveNavLink() {
 
     // Header background no scroll
     const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
+    if (window.scrollY > 1) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');

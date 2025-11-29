@@ -18,36 +18,48 @@
         .fa-play::before { content: '▶️'; }
         .fa-code::before { content: '💻'; }
     </style>
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                 <a href="index.html"> <img src="https://www.dropbox.com/scl/fi/zu0l7kq2k3t8h0ty5logo/logo_vr_transparente.png.png?rlkey=efim5buo8kqyoy0apzfr31hc3&raw=1" alt="Logo VR Oftalmologia">
-                  </a>
-                    </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Início</a></li>
-                    <li><a href="#users" class="nav-link">Usuários</a></li>
-                    <li><a href="#contact" class="nav-link">Contato</a></li>
-                    <li class="nav-auth-links"><a href="login.html" class="nav-link nav-login">Login</a></li>
-                    <li class="nav-auth-links"><a href="register.html" class="nav-link nav-cadastro">Cadastro</a></li>
-                    <li class="nav-user-info" style="display: none;">
-                        <span class="nav-user-name"></span>
-                        <a href="#" class="nav-link nav-logout" onclick="handleLogout()">Sair</a>
-                    </li>
-                </ul>
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="https://www.dropbox.com/scl/fi/l9v84xk41fqiroduc0o5k/Logo-oculartech.png?rlkey=cxj7v3ipgfvigxnupavq2jujz&st=zblq8657&dl=1" alt="Logo OcularTech">
+                </a>
             </div>
-        </nav>
-    </header>
+
+            <div class="nav-menu-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#usuarios" class="nav-link">Usuários</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                    <li><a href="#documentacao" class="nav-link">Documentação</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-auth">
+               <a href="login.html" class="nav-login">Login</a>
+                <a href="register.html" class="nav-cadastro">Cadastro</a>
+            </div>
+
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <section id="home" class="hero">
+        <!-- Vídeo de fundo -->
+  <video id="bg-video" class="video-background" autoplay muted loop playsinline preload="auto" poster="poster.jpg">
+    <source src="https://www.dropbox.com/scl/fi/6lfvmz816r0h0kf61ofhp/dilata-o-da-pupila.mp4?rlkey=h93mupkvpy9n3fple6y8fl5nd&st=gkjptcq8&dl=1" type="video/mp4">
+    
+  </video>
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">Plataforma de Oftalmologia com Realidade Virtual</h1>
@@ -60,114 +72,119 @@
     </section>
 
     <section id="recursos" class="users">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Recursos Principais</h2>
-                <p class="section-description">
-                    Funcionalidades chave da nossa plataforma de realidade virtual.
-                </p>
+<div class="container">
+    <div class="section-header">
+       <h2 class="section-title">Recursos Principais</h2>
+          <p class="section-description">
+              Funcionalidades chave da nossa plataforma de realidade virtual.
+          </p>
             </div>
-            <div class="users-grid">
-                <div class="user-card">
-                    <div class="user-icon"><i class="fas fa-vr-cardboard"></i></div>
+               <div class="users-grid">
+                   <div class="user-card">
+                        <div class="user-icon">
+                        <img src="Icons/simulaçao.png" alt="Simulações" class="card-icon-img">
+                      </div>
                     <h3>Simulações Realistas</h3>
-                    <p class="user-description">Treine procedimentos em um ambiente virtual seguro e altamente detalhado, com feedback tátil e visual preciso.</p>
-                </div>
-                <div class="user-card">
-                    <div class="user-icon"><i class="fas fa-book-medical"></i></div>
-                    <h3>Conteúdo Personalizado</h3>
-                    <p class="user-description">Acesse módulos de aprendizado e casos clínicos que se adaptam ao seu nível de conhecimento e especialidade.</p>
-                </div>
-                <div class="user-card">
-                    <div class="user-icon"><i class="fas fa-users"></i></div>
-                    <h3>Colaboração em Tempo Real</h3>
-                    <p class="user-description">Participe de sessões cirúrgicas virtuais e discussões de casos com especialistas de todo o mundo, como se estivessem na mesma sala.</p>
-                </div>
+                 <p class="user-description">Treine procedimentos em um ambiente virtual seguro e altamente detalhado, com feedback tátil e visual preciso.</p>
             </div>
-        </div>
-    </section>
+         <div class="user-card">
+            <div class="user-icon">
+                <img src="Icons/conteudo.png" alt="Conteúdo" class="card-icon-img">
+                    </div>
+                  <h3>Conteúdo Personalizado</h3>
+                <p class="user-description">Acesse módulos de aprendizado e casos clínicos que se adaptam ao seu nível de conhecimento e especialidade.</p>
+            </div>
+         <div class="user-card">
+              <div class="user-icon">
+              <img src="Icons/colaboraçao.png" alt="Colaboração" class="card-icon-img">
+              </div>
+              <h3>Colaboração em Tempo Real</h3>
+              <p class="user-description">Participe de sessões cirúrgicas virtuais e discussões de casos com especialistas de todo o mundo, como se estivessem na mesma sala.</p>
+          </div>
+       </div>
+   </div>
+</section>
 
-    <section id="users" class="users">
+<section id="users" class="users">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Nossos Planos</h2>
-                <p class="section-description">
-                    Três perfis distintos com níveis de acesso personalizados para cada necessidade.
-                </p>
+               <div class="section-header">
+               <h2 class="section-title">Nossos Planos</h2>
+               <p class="section-description">
+               Três perfis distintos com níveis de acesso personalizados para cada necessidade.
+                  </p>
+                     </div>
+                       <div class="users-grid">
+                       <div class="user-card">
+                     <div class="featured-badge">
+                   COMUM
+                </div>
+              <div class="user-icon">
+                 <img src="Icons/usuario-comum.svg" alt="Usuário Comum" class="card-icon-img">
+               </div>
+             <h3>Usuário Comum</h3>
+          <p class="user-description">
+              Perfil básico para pessoas interessadas em aprender sobre oftalmologia
+        </p>
+             <div class="user-features">
+                <h4>Funcionalidades:</h4>
+                 <ul>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Perfil com histórico médico básico</li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Acesso a conteúdo <span class="badge badge-green">GERAL</span></li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Agendamento de consultas virtuais</li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Acesso à <strong>Sala Comum</strong> VR</li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Material educativo sobre condições oftalmológicas</li>
+                  </ul>
+              </div>
+           </div>
+
+              <div class="user-card featured">
+              <div class="featured-badge">
+                 ACADÊMICO
+                </div>
+                <div class="user-icon">
+                <img src="Icons/usuario-estudante.svg" alt="Estudante" class="card-icon-img">
             </div>
-            <div class="users-grid">
-                <div class="user-card">
-                    <div class="featured-badge">
-                        <i class="fas fa-star"></i>
-                        COMUM
-                    </div>
-                    <div class="user-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>👤 Usuário Comum</h3>
-                    <p class="user-description">
-                        Perfil básico para pessoas interessadas em aprender sobre oftalmologia
-                    </p>
-                    <div class="user-features">
-                        <h4>Funcionalidades:</h4>
-                        <ul>
-                            <li>✅ Perfil com histórico médico básico</li>
-                            <li>✅ Acesso a conteúdo <span class="badge badge-green">GERAL</span></li>
-                            <li>✅ Agendamento de consultas virtuais</li>
-                            <li>✅ Acesso à <strong>Sala Comum</strong> VR</li>
-                            <li>✅ Material educativo sobre condições oftalmológicas</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="user-card featured">
-                    <div class="featured-badge">
-                        <i class="fas fa-star"></i>
-                        ACADÊMICO
-                    </div>
-                    <div class="user-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>🎓 Estudante</h3>
-                    <p class="user-description">
-                        Perfil acadêmico completo para estudantes de medicina com foco em oftalmologia
-                    </p>
-                    <div class="user-features">
-                        <h4>Funcionalidades:</h4>
-                        <ul>
-                            <li>✅ Perfil acadêmico com matrícula e instituição</li>
-                            <li>✅ Acesso a conteúdo <span class="badge badge-green">GERAL</span> e <span class="badge badge-blue">CLÍNICO</span></li>
-                            <li>✅ Orientação por médicos qualificados</li>
-                            <li>✅ Acesso a <strong>Salas Comum e Técnica</strong> VR</li>
-                            <li>✅ Casos clínicos para estudo aprofundado</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="user-card premium">
-                    <div class="featured-badge premium-badge">
-                        <i class="fas fa-crown"></i>
-                        PROFISSIONAL
-                    </div>
-                    <div class="user-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>👨‍⚕️ Médico</h3>
-                    <p class="user-description">
-                        Acesso completo para profissionais médicos com especialização em oftalmologia
-                    </p>
-                    <div class="user-features">
-                        <h4>Funcionalidades:</h4>
-                        <ul>
-                            <li>✅ Perfil profissional com CRM e especialidades</li>
-                            <li>✅ Acesso completo a todos os tipos de conteúdo</li>
-                            <li>✅ Criação e gerenciamento de conteúdo educacional</li>
-                            <li>✅ Orientação e acompanhamento de estudantes</li>
-                            <li>✅ Acesso a <strong>todas as salas VR</strong></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+              <h3>Estudante</h3>
+              <p class="user-description">
+                Perfil acadêmico completo para estudantes de medicina com foco em oftalmologia
+               </p>
+                <div class="user-features">
+                   <h4>Funcionalidades:</h4>
+                      <ul>
+                        <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Perfil acadêmico com matrícula e instituição</li>
+                        <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Acesso a conteúdo <span class="badge badge-green">GERAL</span> e <span class="badge badge-blue">CLÍNICO</span></li>
+                        <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Orientação por médicos qualificados</li>
+                        <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Acesso a <strong>Salas Comum e Técnica</strong> VR</li>
+                        <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Casos clínicos para estudo aprofundado</li>
+                    </ul>
+                 </div>
+              </div>
+
+                     <div class="user-card premium">
+                 <div class="featured-badge premium-badge">
+            PROFISSIONAL
         </div>
-    </section>
+    <div class="user-icon">
+    <img src="Icons/usuario-medico.svg" alt="Médico" class="card-icon-img">
+      </div>
+        <h3>Médico</h3>
+          <p class="user-description">
+                    Acesso completo para profissionais médicos com especialização em oftalmologia
+                </p>
+                <div class="user-features">
+                <h4>Funcionalidades:</h4>
+                    <ul>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Perfil profissional com CRM e especialidades</li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Acesso completo a todos os tipos de conteúdo</li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Criação e gerenciamento de conteúdo educacional</li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Orientação e acompanhamento de estudantes</li>
+                       <li><img src="Icons/acesso-permitido.svg" alt="Permitido" class="list-icon"> Acesso a <strong>todas as salas VR</strong></li>
+                  </ul>
+              </div>
+          </div>
+       </div>
+   </div>
+</section>
 
     <section id="vr-rooms" class="vr-rooms">
         <div class="container">
@@ -178,102 +195,157 @@
                 </p>
             </div>
             <div class="rooms-container">
-                <div class="room-card">
-                    <div class="room-header">
-                        <div class="room-icon">🏠</div>
-                        <h3>Sala Comum</h3>
-                        <span class="room-access">Todos os Usuários</span>
-                    </div>
-                    <div class="room-features">
-                        <p><strong>Características:</strong> Interface simples e amigável</p>
-                        <ul>
-                            <li>Comunicação básica entre usuários</li>
-                            <li>Conteúdo educativo introdutório</li>
-                            <li>Navegação intuitiva</li>
-                            <li>Ambiente acolhedor para iniciantes</li>
-                        </ul>
-                        <div class="room-users">
-                            <span class="user-type comum">👤 Usuário Comum</span>
-                            <span class="user-type estudante">🎓 Estudante</span>
-                            <span class="user-type medico">👨‍⚕️ Médico</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="room-card featured">
-                    <div class="room-header">
-                        <div class="room-icon">🎓</div>
-                        <h3>Sala Técnica</h3>
-                        <span class="room-access">Estudantes + Médicos</span>
-                    </div>
-                    <div class="room-features">
-                        <p><strong>Características:</strong> Ambiente educacional avançado</p>
-                        <ul>
-                            <li>Discussões técnicas especializadas</li>
-                            <li>Simulações de casos clínicos</li>
-                            <li>Interação Professor → Estudantes</li>
-                            <li>Funciona de forma independente</li>
-                            <li>Instrução individual disponível</li>
-                        </ul>
-                        <div class="room-users">
-                            <span class="user-type estudante">🎓 Estudante</span>
-                            <span class="user-type medico">👨‍⚕️ Médico</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="room-card premium">
-                    <div class="room-header">
-                        <div class="room-icon">⚕️</div>
-                        <h3>Sala de Cirurgia</h3>
-                        <span class="room-access">Apenas Médicos</span>
-                    </div>
-                    <div class="room-features">
-                        <p><strong>Características:</strong> Ambiente cirúrgico especializado</p>
-                        <ul>
-                            <li>Colaboração médica em procedimentos</li>
-                            <li>Simulações cirúrgicas avançadas</li>
-                            <li>Instrumentos virtuais especializados</li>
-                            <li>Casos complexos de oftalmologia</li>
-                            <li>Funciona de forma independente</li>
-                        </ul>
-                        <div class="room-users">
-                            <span class="user-type medico">👨‍⚕️ Médico</span>
-                        </div>
-                    </div>
-                </div>
+    
+    <div class="room-card">
+        <div class="room-header">
+            <div class="room-icon">
+                <img src="Icons/s-comum.png" alt="Ícone Sala Comum" class="room-header-icon">
             </div>
+            <h3>Sala Comum</h3>
+            <span class="room-access">Todos os Usuários</span>
+        </div>
+        <div class="room-features">
+            <p><strong>Características:</strong> Interface simples e amigável</p>
+            <ul>
+                <li>Comunicação básica entre usuários</li>
+                <li>Conteúdo educativo introdutório</li>
+                <li>Navegação intuitiva</li>
+                <li>Ambiente acolhedor para iniciantes</li>
+            </ul>
+            <div class="room-users">
+                <span class="user-type comum">
+                    <img src="Icons/usuario-comum.svg" alt="Usuário Comum" class="user-type-icon">
+                    Usuário Comum
+                </span>
+                <span class="user-type estudante">
+                    <img src="Icons/usuario-estudante.svg" alt="Estudante" class="user-type-icon">
+                    Estudante
+                </span>
+                <span class="user-type medico">
+                    <img src="Icons/usuario-medico.svg" alt="Médico" class="user-type-icon">
+                    Médico
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card featured">
+        <div class="room-header">
+            <div class="room-icon">
+                <img src="Icons/s-tecnica.png" alt="Ícone Sala Técnica" class="room-header-icon">
+            </div>
+            <h3>Sala Técnica</h3>
+            <span class="room-access">Estudantes + Médicos</span>
+        </div>
+        <div class="room-features">
+            <p><strong>Características:</strong> Ambiente educacional avançado</p>
+            <ul>
+                <li>Discussões técnicas especializadas</li>
+                <li>Simulações de casos clínicos</li>
+                <li>Interação Professor → Estudantes</li>
+                <li>Funciona de forma independente</li>
+                <li>Instrução individual disponível</li>
+            </ul>
+            <div class="room-users">
+                <span class="user-type estudante">
+                    <img src="Icons/usuario-estudante.svg" alt="Estudante" class="user-type-icon">
+                    Estudante
+                </span>
+                <span class="user-type medico">
+                    <img src="Icons/usuario-medico.svg" alt="Médico" class="user-type-icon">
+                    Médico
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card premium">
+        <div class="room-header">
+            <div class="room-icon">
+                <img src="Icons/s-cirurgia.png" alt="Ícone Sala Cirurgia" class="room-header-icon">
+            </div>
+            <h3>Sala de Cirurgia</h3>
+            <span class="room-access">Apenas Médicos</span>
+        </div>
+        <div class="room-features">
+            <p><strong>Características:</strong> Ambiente cirúrgico especializado</p>
+            <ul>
+                <li>Colaboração médica em procedimentos</li>
+                <li>Simulações cirúrgicas avançadas</li>
+                <li>Instrumentos virtuais especializados</li>
+                <li>Casos complexos de oftalmologia</li>
+                <li>Funciona de forma independente</li>
+            </ul>
+            <div class="room-users">
+                <span class="user-type medico">
+                    <img src="Icons/usuario-medico.svg" alt="Médico" class="user-type-icon">
+                    Médico
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
             <div class="room-matrix">
-                <h3>Matriz de Acesso às Salas</h3>
-                <table class="access-table">
-                    <thead>
-                        <tr>
-                            <th>Tipo de Usuário</th>
-                            <th>🏠 Sala Comum</th>
-                            <th>🎓 Sala Técnica</th>
-                            <th>⚕️ Sala Cirurgia</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="user-type comum">👤 Usuário Comum</span></td>
-                            <td><span class="access allowed">✅</span></td>
-                            <td><span class="access denied">❌</span></td>
-                            <td><span class="access denied">❌</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="user-type estudante">🎓 Estudante</span></td>
-                            <td><span class="access allowed">✅</span></td>
-                            <td><span class="access allowed">✅</span></td>
-                            <td><span class="access denied">❌</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="user-type medico">👨‍⚕️ Médico</span></td>
-                            <td><span class="access allowed">✅</span></td>
-                            <td><span class="access allowed">✅</span></td>
-                            <td><span class="access allowed">✅</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <h3>Matriz de Acesso às Salas</h3>
+    <table class="access-table">
+        <thead>
+            <tr>
+                <th>Tipo de Usuário</th>
+                <th>
+                    <img src="Icons/s-comum.png" alt="Sala Comum" class="header-icon">
+                    Sala Comum
+                </th>
+                <th>
+                    <img src="Icons/s-tecnica.png" alt="Sala Técnica" class="header-icon">
+                    Sala Técnica
+                </th>
+                <th>
+                    <img src="Icons/s-cirurgia.png" alt="Sala Cirurgia" class="header-icon">
+                    Sala Cirurgia
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="user-type comum">
+                        <img src="Icons/usuario-comum.svg" alt="Usuário Comum" class="header-icon">
+                        Usuário Comum
+                    </span>
+                </td>
+                
+                <td><img src="Icons/acesso-permitido.svg" alt="Acesso Permitido" class="access-icon"></td>
+                <td><img src="Icons/acesso-negado.svg" alt="Acesso Negado" class="access-icon"></td>
+                <td><img src="Icons/acesso-negado.svg" alt="Acesso Negado" class="access-icon"></td> 
+            </tr>
+            <tr>
+                <td>
+                    <span class="user-type estudante">
+                        <img src="Icons/usuario-estudante.svg" alt="Estudante" class="header-icon">
+                        Estudante
+                    </span>
+                </td>
+                
+                <td><img src="Icons/acesso-permitido.svg" alt="Acesso Permitido" class="access-icon"></td>
+                <td><img src="Icons/acesso-permitido.svg" alt="Acesso Permitido" class="access-icon"></td>
+                <td><img src="Icons/acesso-negado.svg" alt="Acesso Negado" class="access-icon"></td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="user-type medico">
+                        <img src="Icons/usuario-medico.svg" alt="Médico" class="header-icon">
+                        Médico
+                    </span>
+                </td>
+                
+                <td><img src="Icons/acesso-permitido.svg" alt="Acesso Permitido" class="access-icon"></td>
+                <td><img src="Icons/acesso-permitido.svg" alt="Acesso Permitido" class="access-icon"></td>
+                <td><img src="Icons/acesso-permitido.svg" alt="Acesso Permitido" class="access-icon"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
         </div>
     </section>
    
